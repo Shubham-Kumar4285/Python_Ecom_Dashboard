@@ -2,8 +2,8 @@
 
 An interactive web dashboard for analyzing e-commerce sales data, featuring synthetic data generation, advanced visualizations, and fraud detection. The entire application is containerized with Docker for easy, one-command setup and deployment on any machine.
 
-<!-- A screenshot of your dashboard would look great here! -->
-<!-- ![Dashboard Screenshot](images/img1.png) -->
+
+![Dashboard Screenshot](images/img1.png)
 
 ---
 
@@ -66,11 +66,9 @@ Now that you have your images, you can easily run any part of the project.
 
 This command runs the data generator inside a temporary container and saves the output CSV file to your project directory.
 ```
-# On macOS/Linux
+
 docker run --rm -v "$(pwd):/app" python-env:latest python main.py
 
-# On Windows (Command Prompt)
-docker run --rm -v "%cd%:/app" python-env:latest python main.py
 ```
 This will create the `synthetic_ecommerce_data.csv` file in your project folder.
 
@@ -78,11 +76,9 @@ This will create the `synthetic_ecommerce_data.csv` file in your project folder.
 
 Execute the test suite using the `python-env` base image.
 ```
-# On macOS/Linux
+
 docker run --rm -v "$(pwd):/app" python-env:latest pytest
 
-# On Windows (Command Prompt)
-docker run --rm -v "%cd%:/app" python-env:latest pytest
 ```
 
 #### C. Run the Dashboard
@@ -105,7 +101,7 @@ If you prefer to run the application directly on your machine:
 
 1.  **Create and Activate a Virtual Environment**.
 2.  **Install Dependencies**: `pip install -r requirements.txt`.
-3.  **Generate Data**: `python ecommerce_data_generator.py`.
+3.  **Generate Data**: `python main.py`.
 4.  **Run Tests**: `pytest`.
 5.  **Run the App**: `streamlit run dashboard.py`.
 ```
